@@ -1,19 +1,21 @@
 import { Container, Row, Col } from "react-bootstrap";
 import SearchForm from "../SearchForm/SearchForm";
+import Partner from "../Partner/Partner";
+import './Home.scss';
 const HomeBrand = () => {
     return (
         <>
-            <Container className="mt-5">
-                <Row>
-                    <Col md="6" className="mt-5 pt-5" >
-                    <h1>Trouve ton contrat et postule rapidement avec Webrew</h1>
-                    <p>
+            <Container className="mt-5 p-0 m-0">
+                <Row className="ms-5">
+                    <Col md="6" className="mt-5 pt-5 ms-4" >
+                    <h1 className="homeBrand-titre">Trouve ton contrat et postule rapidement avec Webrew</h1>
+                    <p className="homeBrand-desc"> 
                         Notre outil référence pour toi les offres de stage, d'alternance ou encore de professionnalisation selon votre ville et votre parcours. 
                         Pour cela, il te suffit de commencer à chercher !
                     </p>
                     <SearchForm></SearchForm>
                     </Col>
-                    <Col md="5">
+                    <Col md="5" className="ms-3">
                         <svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 858.133 674.506">
                             <g id="Groupe_109" data-name="Groupe 109" transform="translate(-905.442 -264)">
                                 <g id="Groupe_106" data-name="Groupe 106" transform="translate(1659.696 540)">
@@ -202,6 +204,14 @@ const HomeBrand = () => {
                         </svg>
                     </Col>
                 </Row>
+                <Row>
+                    <Col md="6" className="p-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1071.867" height="153.341" viewBox="0 0 1071.867 153.341">
+                        <path id="Tracé_2291" data-name="Tracé 2291" d="M1183.847,6479.283s-186.67-17.542-277.709-42.935,24.076-29.01-86.448-58.637-238.666-9.34-415.594-22.282-292.116-29.486-292.116-29.486v153.341H1183.847Z" transform="translate(-111.979 -6325.942)" fill="#7b1cb2"/>
+                    </svg>
+                    </Col>
+                </Row>
+                <Partner></Partner>
             </Container>
         </>
     )

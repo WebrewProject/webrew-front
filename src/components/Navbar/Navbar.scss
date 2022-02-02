@@ -1,0 +1,28 @@
+@import '../../utilities/utilities.scss';
+
+.navbar-brand {
+    color: $base-color !important;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.nav-link {
+    color: $gray;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight:400;
+    :hover {
+        color: $black;
+    }
+}
+
+.btn-primary {
+    background-color: $base-color;
+    font-family: 'Noto Sans', sans-serif;
+    border: $base-color;
+    font-weight:400;
+}
+
+.membre {
+    border-radius: 45px;
+}
