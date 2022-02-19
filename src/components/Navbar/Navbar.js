@@ -19,7 +19,7 @@ const NavBar = () => {
      <Nav >
 
        { !localStorage.getItem('token') ?
-          <Nav.Link href="#link" className='mt-2'>Inscription</Nav.Link> : <></> 
+          <Nav.Link href="register" className='mt-2'>Inscription</Nav.Link> : <></> 
        }
          <Nav.Link href={ localStorage.getItem('token') ? "profile" : "login" }>
              <Button variant="primary" className='membre' >Espace Membre</Button>
