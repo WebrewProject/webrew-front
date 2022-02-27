@@ -9,6 +9,7 @@ import Login from "../components/Login/Login";
 import Home from "../components/Home/Home";
 import Profile from "../components/Profile/Profile";
 import Register from "../components/Register/Register";
+import Logout from "./Logout";
 
   const AppRouter = () => {
       
@@ -16,6 +17,7 @@ import Register from "../components/Register/Register";
         <Router>
             <Routes>
             <Route path="/login" element={<Login/>} />
+            <Route path="/logout" element={<Logout/>} />
             <Route path="/register" element={<Register/>} />
             <Route path="/" element={<Home/>} />
             <Route path="/Profile" element={<Profile/>} />

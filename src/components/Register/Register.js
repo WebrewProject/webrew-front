@@ -1,11 +1,12 @@
 
-import React from "react";
+import React, { useState } from "react";
 import { Container, Row, Col, Form , Button} from "react-bootstrap";
 import { useForm, Controller } from "react-hook-form";
 import "./Register.scss"
 
 export default function Register(){
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const {accountType, setAccountType} = useState({});
     const axios = require('axios');
     const onSubmit = data => {
         axios.defaults.headers.post['Content-Type'] ='application/x-www-form-urlencoded';
@@ -25,6 +26,8 @@ export default function Register(){
             console.log(error);
           });
     };
+
+    
     return (
         <>
             <Container className="mt-5">
@@ -39,14 +42,35 @@ export default function Register(){
                    <Container>
                        <Row>
                            <Col>
-                                <Form.Control {...register("firstname", { required: true })} type="text" placeholder="Entrez votre prénom" className="py-4" />
-                                {errors.exampleRequired && <span>This field is required</span>}
-                           </Col>
-                           <Col>
-                                <Form.Control {...register("lastname", { required: true })} type="text" placeholder="Entrez votre nom" className="py-4" />
-                                {errors.exampleRequired && <span>This field is required</span>}
-                           </Col>
+                                <Form.Select aria-label="Type de compte" {...register("accountType", { required: true })} onChange={this.handleChange}>
+                                    <option>Type de compte</option>
+                                    <option value="entreprise" >Entreprise</option>
+                                    <option value="particulier">Particulier</option>
+                                </Form.Select>
+                            </Col>
                        </Row>
+                       {
+                           useState.accountType == "particulier" ? 
+                           <Row>
+                                <Col>
+                                        <Form.Control {...register("firstname", { required: true })} type="text" placeholder="Entrez votre prénom" className="py-4" />
+                                        {errors.exampleRequired && <span>This field is required</span>}
+                                </Col>
+                                <Col>
+                                        <Form.Control {...register("lastname", { required: true })} type="text" placeholder="Entrez votre nom" className="py-4" />
+                                        {errors.exampleRequired && <span>This field is required</span>}
+                                </Col>
+                         </Row>
+                       :
+                        <Row>
+                            <Col>
+                            <Col>
+                                <Form.Control {...register("denomination", { required: true })} type="text" placeholder="Entrez votre dénomination" className="py-4" />
+                                {errors.exampleRequired && <span>This field is required</span>}
+                                </Col>
+                            </Col>
+                        </Row>
+                       }
                        <Row>
                             <Col>
                                 <Form.Control {...register("phone", { required: true })} type="text" placeholder="Entrez votre numéro de téléphone" className="py-4" />
