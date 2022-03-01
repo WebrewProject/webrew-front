@@ -14,3 +14,23 @@ input {
     border-left:  1px solid $gray !important;
 }
 
+.form__city {
+    position: relative;
+    .form__city--cities {
+        position: absolute;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 1px 0px 3px rgba($color: #000000, $alpha: 0.5);
+        width: max-content;
+        min-width: 100%;
+
+        .item {
+            padding: 5px 10px;
+            cursor: pointer;
+            &:hover {
+                background-color: rgba($color: #000000, $alpha: 0.1);
+            }
+        }
+    }
+}
+
