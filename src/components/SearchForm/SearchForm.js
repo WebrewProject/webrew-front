@@ -13,16 +13,20 @@ const SearchForm = () => {
     const cityInput = useRef(null)
 
     const handleChange = e => {
-        axios.get(`https://geo.api.gouv.fr/communes?nom=${e.target.value}&fields=departement&boost=population&limit=5`)
-            .then(response => {
-                if (response.data.length) {
-                    setCities(response.data)
-                }
-            })
-            .catch(error => {
-                console.log(error)
-            })
-            .finally(() => { })
+        if (!e.target.value) {
+            setCities([])
+        } else {
+            axios.get(`https://geo.api.gouv.fr/communes?nom=${e.target.value}&fields=departement&boost=population&limit=5`)
+                .then(response => {
+                    if (response.data.length) {
+                        setCities(response.data)
+                    }
+                })
+                .catch(error => {
+                    console.log(error)
+                })
+                .finally(() => { })
+        }
     }
 
     const handleClick = (city) => {
@@ -41,14 +45,14 @@ const SearchForm = () => {
                         <Col md="5" className="p-0 form__city">
                             <Form.Control ref={cityInput} onInput={handleChange} placeholder="Ville ..." {...register("city")} className="py-3 w-100 city" />
                             {
-                                cities && 
+                                cities &&
                                 <div className="form__city--cities">
-                                {cities.map((c, index) => (
+                                    {cities.map((c, index) => (
                                         <div key={index} className="item" onClick={() => handleClick(c)}>
                                             {c.nom} - {c.code}
                                         </div>
                                     )
-                                )}
+                                    )}
                                 </div>
                             }
                         </Col>
