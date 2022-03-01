@@ -1,0 +1,50 @@
+.choiceBar{
+    height: 40px;
+    background: rgb(177,45,253);
+    background: linear-gradient(279deg, rgba(177,45,253,1) 0%, rgba(123,28,179,1) 100%);
+}
+.login-item {
+    color: white;
+    text-decoration: none;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 700;
+    &:active {
+        text-decoration: underline;
+    }
+    &:hover {
+        color: white;
+        text-decoration: underline;
+    }
+}
+
+.register-item {
+   color: white;
+   text-decoration: none;
+   font-family: 'Rubik', sans-serif;
+   font-weight: 700;
+   &:active {
+       text-decoration: underline;
+   }
+   &:hover {
+       color: white;
+       text-decoration: underline;
+   }
+}
+
+.entreprise {
+    background-color: rebeccapurple;
+    border-radius: 5px;
+    h6{
+        font-size: 12px;
+        color: white;
+    }
+}
+
+.particulier {
+    background-color: rebeccapurple;
+    border-radius: 5px;
+    h6{
+        font-size: 12px;
+        color: white;
+    }
+}
