@@ -10,12 +10,47 @@ h2 {
      color: $link;
      font-size: 17px !important;
  }
+ .form-login {
+    min-height: 100vh;
+    background: rgb(177,45,253);
+    background: linear-gradient(279deg, rgba(177,45,253,1) 0%, rgba(123,28,179,1) 100%);
+
+ }
+
+ .login-item {
+     color: white;
+     text-decoration: none;
+     font-family: 'Rubik', sans-serif;
+     font-weight: 700;
+     &:active {
+         text-decoration: underline;
+     }
+     &:hover {
+         color: white;
+         text-decoration: underline;
+     }
+ }
+
+ .register-item {
+    color: white;
+    text-decoration: none;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 700;
+    &:active {
+        text-decoration: underline;
+    }
+    &:hover {
+        color: white;
+        text-decoration: underline;
+    }
+ }
+
 .login-form {
     background-color: $white;
     height: 100%;
-
+   
     form {
-        background-color: whitesmoke;
+        background-color: white;
     }
     a {
         color: $link;
@@ -38,7 +73,7 @@ h2 {
         background-color: #fff !important;
     }
     .register {
-        color: $black;
+        color: #B873E0;
         text-decoration: none;
     }
 }

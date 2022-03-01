@@ -21,6 +21,10 @@
     font-family: 'Noto Sans', sans-serif;
     border: $base-color;
     font-weight:400;
+
+    &:hover {
+        background-color: #3e0e59;
+    }
 }
 
 .membre {

@@ -17,8 +17,11 @@ const NavBar = () => {
      </Navbar.Collapse>
      <Navbar.Collapse className="justify-content-end">
      <Nav >
-         <Nav.Link href="#link" className='mt-2'>Inscription</Nav.Link>
-         <Nav.Link href="login">
+
+       { !localStorage.getItem('token') ?
+          <Nav.Link href="register" className='mt-2'>Inscription</Nav.Link> : <></> 
+       }
+         <Nav.Link href={ localStorage.getItem('token') ? "profile" : "login" }>
              <Button variant="primary" className='membre' >Espace Membre</Button>
          </Nav.Link>
        </Nav>
